@@ -1,0 +1,38 @@
+Curso1:Programación Avanzada
+Alumno1:Aitor Etxeberria
+Alumno2:Maite Irizar
+Alumno3:Gorka Arana
+
+Curso2:Bases de Datos
+Alumno4:Nerea Urrutia
+Alumno5:Jon Zubizarreta
+
+Curso3:Inteligencia Artificial
+Alumno6:Miren Otxoa
+Alumno7:Unai Aguirre
+Alumno8:Leire Echeverría
+
+Curso4:Desarrollo Web
+Alumno9:Asier Gómez
+Alumno10:Izaro Martín
+Alumno11:Iker Ruiz
+
+Curso5:Redes de Computadoras
+Alumno12:Sara Rodríguez
+Alumno13:Mikel Torres
+Alumno14:Eider Vázquez
+
+Curso6:Seguridad Informática
+Alumno15:Adriana Zubeldia
+Alumno16:Andoni Soto
+
+Curso7:Machine Learning
+Alumno17:Leire Ruiz
+Alumno18:Gorka Herrera
+Alumno19:Sara Mendoza
+
+Curso8:Sistemas Operativos
+Alumno20:Iker Flores
+Alumno21:Ane Cordero
+Alumno22:Eneko Ortiz
+

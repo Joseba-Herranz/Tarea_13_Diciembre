@@ -1,0 +1,28 @@
+<BaseDeDatos>
+    <Cursos>
+        <Curso>
+            <id>1</id>
+            <nombre>Programación Avanzada</nombre>
+            <descripcion>Curso de programación avanzada</descripcion>
+            <Alumnos>
+                <Alumno>
+                    <id>1</id>
+                    <nombre>Aitor</nombre>
+                    <apellido>Etxeberria</apellido>
+                </Alumno>
+                <Alumno>
+                    <id>2</id>
+                    <nombre>Maite</nombre>
+                    <apellido>Irizar</apellido>
+                </Alumno>
+                <Alumno>
+                    <id>3</id>
+                    <nombre>Gorka</nombre>
+                    <apellido>Arana</apellido>
+                </Alumno>
+            </Alumnos>
+        </Curso>
+        <!-- Otros cursos y alumnos -->
+    </Cursos>
+</BaseDeDatos>
+
