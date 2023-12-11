@@ -10,6 +10,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import CargaBaseDeDatos.java;
 
 public class Main {
 
@@ -48,54 +49,59 @@ public class Main {
 			}
 		}
 	}
-
+	
+	
 	// Método para cargar la base de datos desde un fichero
 	private static void cargarBaseDeDatos() {
-		// Leer el nombre del fichero
-		System.out.println("Introduce el nombre del fichero:");
-		String nombreFichero = sc.nextLine();
+		public static void main(String[] args) {
 
-		// Cargar los datos del fichero en la base de datos
-		try {
-			// Crear una sesión de Hibernate
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-			Session session = sessionFactory.openSession();
+	    // Crea una sesión de Hibernate
+	    Configuration configuration = new Configuration();
+	    configuration.configure("hibernate.cfg.xml");
+	    SessionFactory sessionFactory = configuration.buildSessionFactory();
+	    Session session = sessionFactory.openSession();
 
-			// Cargar los datos del fichero
-			FileReader fr = new FileReader(nombreFichero);
-			BufferedReader br = new BufferedReader(fr);
+	    // Crea una nueva transacción
+	    session.beginTransaction();
 
-			String linea;
-			while ((linea = br.readLine()) != null) {
-				// Parsear la línea del fichero
-				String[] campos = linea.split(";");
+	    // Lee los datos del archivo
+	    Scanner scanner = new Scanner(new File("cursos_alumnos.txt"));
+	    while (scanner.hasNextLine()) {
+	      String linea = scanner.nextLine();
 
-				// Crear un nuevo curso
-				Curso curso = new Curso();
-				curso.setNombre(campos[0]);
-				curso.setDescripcion(campos[1]);
+	      // Divide la línea en dos partes
+	      String[] partes = linea.split(":");
 
-				// Crear una lista de alumnos
-				List<Alumno> alumnos = new ArrayList<>();
-				for (int i = 2; i < campos.length; i++) {
-					alumnos.add(new Alumno(campos[i]));
-				}
+	      // Obtén el nombre del curso
+	      String nombreCurso = partes[0];
 
-				// Asociar el curso a los alumnos
-				curso.setAlumnos(alumnos);
+	      // Obtén los alumnos del curso
+	      String[] alumnos = partes[1].split(";");
 
-				// Guardar el curso en la base de datos
-				session.save(curso);
-			}
+	      // Crea un curso
+	      Curso curso = new Curso();
+	      curso.setNombre(nombreCurso);
 
-			// Cerrar la sesión de Hibernate
-			session.close();
-		} catch (Exception e) {
-			// Manejar la excepción
-			System.out.println("Error al cargar la base de datos: " + e.getMessage());
-		}
-	}
+	      // Crea los alumnos
+	      for (String alumno : alumnos) {
+	        Alumno a = new Alumno();
+	        a.setNombre(alumno.split(":")[0]);
+	        a.setApellido(alumno.split(":")[1]);
+	        curso.addAlumno(a);
+	      }
 
+	      // Guarda el curso
+	      session.save(curso);
+	    }
+
+	    // Commitea la transacción
+	    session.getTransaction().commit();
+
+	    // Cierra la sesión
+	    session.close();
+	  }
+	
+	
 	// Método para mostrar la base de datos
 	private static void mostrarBaseDeDatos() {
 		// Crear una sesión de Hibernate
