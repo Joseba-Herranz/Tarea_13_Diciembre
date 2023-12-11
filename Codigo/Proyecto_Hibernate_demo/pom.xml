@@ -3,4 +3,17 @@
   <groupId>Proyecto_Hibernate</groupId>
   <artifactId>Proyecto_Hibernate_demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+	  <dependencies>
+		  <dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.6.5.Final</version>
+		  </dependency>
+		
+		  <dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.29</version>
+		  </dependency>
+	</dependencies>
 </project>
