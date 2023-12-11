@@ -1,16 +1,16 @@
 package proyecto_Hibernate;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Scanner;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.hibernate.cfg.Configuration;
-import CargaBaseDeDatos.java;
 
 public class Main {
 
@@ -53,8 +53,6 @@ public class Main {
 	
 	// Método para cargar la base de datos desde un fichero
 	private static void cargarBaseDeDatos() {
-		public static void main(String[] args) {
-
 	    // Crea una sesión de Hibernate
 	    Configuration configuration = new Configuration();
 	    configuration.configure("hibernate.cfg.xml");
