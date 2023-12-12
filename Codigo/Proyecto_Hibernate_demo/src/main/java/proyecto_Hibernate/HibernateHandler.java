@@ -10,7 +10,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.mapping.Set;
 import org.hibernate.query.Query;
 
 public class HibernateHandler {
@@ -26,7 +25,7 @@ public class HibernateHandler {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
 
-            try (Scanner scanner = new Scanner(new File("E:\\Github\\Tarea_13_Diciembre\\Archivos\\curos_alumnos.txt"))) {
+            try (Scanner scanner = new Scanner(new File("C:\\Users\\2dam3\\Documents\\GitHub\\Tarea_13_Diciembre\\Archivos\\curos_alumnos.txt"))) {
                 String currentCursoNombre = null;
                 Curso currentCurso = null;
 

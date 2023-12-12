@@ -7,7 +7,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         MenuHandler menuHandler = new MenuHandler();
 
-        // Bucle principal del menú
         while (true) {
             menuHandler.showMenu();
             int opcion = sc.nextInt();
