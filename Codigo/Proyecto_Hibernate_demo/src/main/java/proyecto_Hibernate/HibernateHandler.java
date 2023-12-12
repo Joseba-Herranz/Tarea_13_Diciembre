@@ -75,10 +75,11 @@ public class HibernateHandler {
 
             for (Curso curso : cursos) {
                 System.out.println("Curso: " + curso.getNombre());
-                System.out.println("Descripción: " + curso.getDescripcion());
+                System.out.println("Descripción: Curso de " + curso.getNombre());
 
                 for (Alumno alumno : curso.getAlumnos()) {
-                    System.out.println("Alumno: " + alumno.getNombre());
+                    System.out.println("Alumno: " + alumno.getNombre()+ " " + alumno.getApellido());
+
                 }
             }
         }
@@ -88,7 +89,7 @@ public class HibernateHandler {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
 
-            try (PrintWriter writer = new PrintWriter(new File("E:\\Github\\Tarea_13_Diciembre\\Archivos\\dump.xml"))) {
+            try (PrintWriter writer = new PrintWriter(new File("E:\\Github\\Tarea_13_Diciembre\\Archivos\\pruebas.xml"))) {
                 writer.println("<BaseDeDatos>");
 
                 List<Curso> cursos = session.createQuery("FROM Curso", Curso.class).getResultList();

@@ -13,7 +13,7 @@ public class Curso {
     @Id
     private int id;
     private String nombre;
-    private String descripcion;
+    //private String descripcion;
 
     @OneToMany(mappedBy = "curso")
     private List<Alumno> alumnos = new ArrayList<>();
@@ -34,13 +34,13 @@ public class Curso {
         this.nombre = nombre;
     }
 
-    public String getDescripcion() {
+    /*public String getDescripcion() {
         return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
+    }*/
 
     public List<Alumno> getAlumnos() {
         return alumnos;
