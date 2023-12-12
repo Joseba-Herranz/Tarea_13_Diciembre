@@ -1,7 +1,7 @@
 package proyecto_Hibernate;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -16,7 +16,7 @@ public class Curso {
     private String descripcion;
 
     @OneToMany(mappedBy = "curso")
-    private Set<Alumno> alumnos = new HashSet<>();
+    private List<Alumno> alumnos = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -42,11 +42,11 @@ public class Curso {
         this.descripcion = descripcion;
     }
 
-    public Set<Alumno> getAlumnos() {
+    public List<Alumno> getAlumnos() {
         return alumnos;
     }
 
-    public void setAlumnos(Set<Alumno> alumnos) {
+    public void setAlumnos(List<Alumno> alumnos) {
         this.alumnos = alumnos;
     }
 

@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.mapping.Set;
 import org.hibernate.query.Query;
 
 public class HibernateHandler {
@@ -84,8 +85,51 @@ public class HibernateHandler {
             }
         }
     }
-
+    
     public void volcarBaseDeDatos() {
+        try (Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+
+            try (PrintWriter writer = new PrintWriter(new File("E:\\Github\\Tarea_13_Diciembre\\Archivos\\dump.xml"))) {
+                writer.println("<BaseDeDatos>");
+
+                List<Curso> cursos = session.createQuery("FROM Curso", Curso.class).getResultList();
+
+                writer.println("\t<Cursos>");
+
+                for (Curso curso : cursos) {
+                    writer.println("\t\t<Curso>");
+                    writer.println("\t\t\t<id>" + curso.getId() + "</id>");
+                    writer.println("\t\t\t<nombre>" + curso.getNombre() + "</nombre>");
+                    writer.println("\t\t\t<descripcion>Curso de " + curso.getNombre().toLowerCase() + "</descripcion>");
+
+                    List<Alumno> alumnos = curso.getAlumnos();
+                    writer.println("\t\t\t<Alumnos>");
+
+                    for (Alumno alumno : alumnos) {
+                        writer.println("\t\t\t\t<Alumno>");
+                        writer.println("\t\t\t\t\t<id>" + alumno.getId() + "</id>");
+                        writer.println("\t\t\t\t\t<nombre>" + alumno.getNombre() + "</nombre>");
+                        writer.println("\t\t\t\t\t<apellido>" + alumno.getApellido() + "</apellido>");
+                        writer.println("\t\t\t\t</Alumno>");
+                    }
+
+                    writer.println("\t\t\t</Alumnos>");
+                    writer.println("\t\t</Curso>");
+                }
+
+                writer.println("\t</Cursos>");
+                writer.println("</BaseDeDatos>");
+
+                transaction.commit();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                transaction.rollback();
+            }
+        }
+    }
+    
+   /* public void volcarBaseDeDatos() {
         try (Session session = sessionFactory.openSession()) {
             List<Curso> cursos = session.createQuery("SELECT c FROM Curso c", Curso.class).list();
 
@@ -115,5 +159,5 @@ public class HibernateHandler {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 }
