@@ -1,10 +1,10 @@
 package proyecto_Hibernate;
 
 public class MenuHandler {
-    private DatabaseHandler databaseHandler;
+    private HibernateHandler hibernateHandler;
 
     public MenuHandler() {
-        this.databaseHandler = new DatabaseHandler();
+        this.hibernateHandler = new HibernateHandler();
     }
 
     public void showMenu() {
@@ -19,13 +19,13 @@ public class MenuHandler {
     public void handleOption(int option) {
         switch (option) {
             case 1:
-                databaseHandler.cargarBaseDeDatos();
+                hibernateHandler.cargarBaseDeDatos();
                 break;
             case 2:
-                databaseHandler.mostrarBaseDeDatos();
+            	hibernateHandler.mostrarBaseDeDatos();
                 break;
             case 3:
-                databaseHandler.volcarBaseDeDatos();
+            	hibernateHandler.volcarBaseDeDatos();
                 break;
             case 4:
                 System.out.println("Saliendo del programa...");

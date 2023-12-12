@@ -33,14 +33,14 @@ public class HibernateHandler {
                     String linea = scanner.nextLine();
 
                     if (linea.startsWith("Curso")) {
-                        // Create a new Curso when a line starts with "Curso"
+
                         String[] cursoParts = linea.split(":");
                         currentCursoNombre = cursoParts[1].trim();
 
                         currentCurso = new Curso();
                         currentCurso.setNombre(currentCursoNombre);
                     } else if (linea.startsWith("Alumno")) {
-                        // Add Alumno to the current Curso when a line starts with "Alumno"
+
                         String[] alumnoParts = linea.split(":");
                         String[] nombreApellido = alumnoParts[1].trim().split(" ");
                         String nombre = nombreApellido[0].trim();
@@ -56,7 +56,6 @@ public class HibernateHandler {
                     }
                 }
 
-                // Save the last Curso after exiting the loop
                 if (currentCurso != null) {
                     session.save(currentCurso);
                 }
@@ -127,36 +126,4 @@ public class HibernateHandler {
             }
         }
     }
-    
-   /* public void volcarBaseDeDatos() {
-        try (Session session = sessionFactory.openSession()) {
-            List<Curso> cursos = session.createQuery("SELECT c FROM Curso c", Curso.class).list();
-
-            File archivoVolcado = new File("C:\\Users\\josdr\\Desktop\\prueba\\pruebas.xml");
-            try (PrintWriter pw = new PrintWriter(archivoVolcado)) {
-                pw.println("<BaseDeDatos>");
-
-                for (Curso curso : cursos) {
-                    pw.println("  <Curso>");
-                    pw.println("    <id>" + curso.getId() + "</id>");
-                    pw.println("    <nombre>" + curso.getNombre() + "</nombre>");
-                    pw.println("    <descripcion>" + curso.getDescripcion() + "</descripcion>");
-
-                    for (Alumno alumno : curso.getAlumnos()) {
-                        pw.println("      <Alumno>");
-                        pw.println("        <id>" + alumno.getId() + "</id>");
-                        pw.println("        <nombre>" + alumno.getNombre() + "</nombre>");
-                        pw.println("        <apellido>" + alumno.getApellido() + "</apellido>");
-                        pw.println("      </Alumno>");
-                    }
-
-                    pw.println("  </Curso>");
-                }
-
-                pw.println("</BaseDeDatos>");
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-    }*/
 }

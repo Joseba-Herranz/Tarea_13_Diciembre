@@ -12,5 +12,6 @@ public class Main {
             int opcion = sc.nextInt();
             menuHandler.handleOption(opcion);
         }
+        
     }
 }
