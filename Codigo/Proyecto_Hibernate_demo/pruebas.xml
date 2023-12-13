@@ -1,7 +1,60 @@
 <BaseDeDatos>
-  <Curso>
-    <id>0</id>
-    <nombre>Sistemas Operativos</nombre>
-    <descripcion>null</descripcion>
-  </Curso>
+	<Cursos>
+		<Curso>
+			<id>1</id>
+			<nombre>Programación Avanzada</nombre>
+			<descripcion>Curso de programación avanzada</descripcion>
+			<Alumnos>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>2</id>
+			<nombre>Bases de Datos</nombre>
+			<descripcion>Curso de bases de datos</descripcion>
+			<Alumnos>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>3</id>
+			<nombre>Inteligencia Artificial</nombre>
+			<descripcion>Curso de inteligencia artificial</descripcion>
+			<Alumnos>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>4</id>
+			<nombre>Desarrollo Web</nombre>
+			<descripcion>Curso de desarrollo web</descripcion>
+			<Alumnos>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>5</id>
+			<nombre>Redes de Computadoras</nombre>
+			<descripcion>Curso de redes de computadoras</descripcion>
+			<Alumnos>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>6</id>
+			<nombre>Seguridad Informática</nombre>
+			<descripcion>Curso de seguridad informática</descripcion>
+			<Alumnos>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>7</id>
+			<nombre>Machine Learning</nombre>
+			<descripcion>Curso de machine learning</descripcion>
+			<Alumnos>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>8</id>
+			<nombre>Sistemas Operativos</nombre>
+			<descripcion>Curso de sistemas operativos</descripcion>
+			<Alumnos>
+			</Alumnos>
+		</Curso>
+	</Cursos>
 </BaseDeDatos>

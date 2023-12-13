@@ -25,49 +25,59 @@ public class HibernateHandler {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
 
-            try (Scanner scanner = new Scanner(new File("C:\\Users\\2dam3\\Documents\\GitHub\\Tarea_13_Diciembre\\Archivos\\curos_alumnos.txt"))) {
-                String currentCursoNombre = null;
+            try (Scanner scanner = new Scanner(new File("curos_alumnos.txt"))) {
                 Curso currentCurso = null;
 
                 while (scanner.hasNextLine()) {
                     String linea = scanner.nextLine();
+                    System.out.println("Leyendo línea: " + linea);
 
                     if (linea.startsWith("Curso")) {
+                        if (currentCurso != null) {
+                            session.save(currentCurso);
+                            System.out.println("Guardando curso: " + currentCurso);
+                            currentCurso = null;
+                        }
 
                         String[] cursoParts = linea.split(":");
-                        currentCursoNombre = cursoParts[1].trim();
+                        String currentCursoNombre = cursoParts[1].trim();
 
                         currentCurso = new Curso();
                         currentCurso.setNombre(currentCursoNombre);
+                        System.out.println("Nuevo curso: " + currentCurso);
+
                     } else if (linea.startsWith("Alumno")) {
-
-                        String[] alumnoParts = linea.split(":");
-                        String[] nombreApellido = alumnoParts[1].trim().split(" ");
-                        String nombre = nombreApellido[0].trim();
-                        String apellido = nombreApellido.length > 1 ? nombreApellido[1].trim() : "";
-
-                        Alumno alumno = new Alumno();
-                        alumno.setNombre(nombre);
-                        alumno.setApellido(apellido);
-
                         if (currentCurso != null) {
+                            String[] alumnoParts = linea.split(":");
+                            String nombreCompleto = alumnoParts[1].trim();
+
+                            String[] nombreApellido = nombreCompleto.split(" ", 2);
+                            String nombre = nombreApellido[0].trim();
+                            String apellido = nombreApellido.length > 1 ? nombreApellido[1].trim() : "";
+
+                            Alumno alumno = new Alumno();
+                            alumno.setNombre(nombre);
+                            alumno.setApellido(apellido);
+
                             currentCurso.addAlumno(alumno);
+                            System.out.println("Añadiendo alumno a curso: " + alumno);
                         }
                     }
                 }
 
                 if (currentCurso != null) {
                     session.save(currentCurso);
+                    System.out.println("Guardando último curso: " + currentCurso);
                 }
 
                 transaction.commit();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-                transaction.rollback();
             }
         }
     }
 
+    
     public void mostrarBaseDeDatos() {
         try (Session session = sessionFactory.openSession()) {
             Query<Curso> query = session.createQuery("from Curso", Curso.class);
@@ -89,7 +99,7 @@ public class HibernateHandler {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
 
-            try (PrintWriter writer = new PrintWriter(new File("E:\\Github\\Tarea_13_Diciembre\\Archivos\\pruebas.xml"))) {
+            try (PrintWriter writer = new PrintWriter(new File("pruebas.xml"))) {
                 writer.println("<BaseDeDatos>");
 
                 List<Curso> cursos = session.createQuery("FROM Curso", Curso.class).getResultList();
