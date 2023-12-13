@@ -12,6 +12,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Curso", schema = "examen")
 public class Curso {
+	
+	public Curso() {
+	    this.alumnos = new ArrayList<>();
+	}
+	
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

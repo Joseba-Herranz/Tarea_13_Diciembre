@@ -60,9 +60,14 @@ public class HibernateHandler {
                             Alumno alumno = new Alumno();
                             alumno.setNombre(nombre);
                             alumno.setApellido(apellido);
-
-                            currentCurso.addAlumno(alumno);
-                            System.out.println("Añadiendo alumno a curso: " + alumno);
+                            
+                            //alumno.setCurso(currentCurso); 
+                            //currentCurso.getAlumnos().add(alumno); 
+                            
+                            currentCurso.addAlumno(alumno); 
+                            session.save(alumno);
+                            
+                            System.out.println("Añadiendo alumno a curso: " + alumno + " " +alumno.getNombre() + " "+ alumno.getApellido());
                         }
                     }
                 }
