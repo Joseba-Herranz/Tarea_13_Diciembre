@@ -18,6 +18,8 @@ public class HibernateHandler {
     public HibernateHandler() {
         Configuration configuration = new Configuration();
         configuration.configure("hibernate.cfg.xml");
+        configuration.addAnnotatedClass(Curso.class);
+        configuration.addAnnotatedClass(Alumno.class);
         this.sessionFactory = configuration.buildSessionFactory();
     }
 
