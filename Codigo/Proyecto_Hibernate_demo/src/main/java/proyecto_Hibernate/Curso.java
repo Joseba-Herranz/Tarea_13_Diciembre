@@ -16,7 +16,7 @@ public class Curso {
 	public Curso() {
 	    this.alumnos = new ArrayList<>();
 	}
-	
+	//Persist del curso (en cascada)
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
