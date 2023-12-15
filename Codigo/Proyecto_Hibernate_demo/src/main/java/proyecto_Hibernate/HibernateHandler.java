@@ -23,6 +23,8 @@ public class HibernateHandler {
         this.sessionFactory = configuration.buildSessionFactory();
     }
 
+    
+    //Arreglar que no se machaca los datos anteriores
     public void cargarBaseDeDatos() {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
