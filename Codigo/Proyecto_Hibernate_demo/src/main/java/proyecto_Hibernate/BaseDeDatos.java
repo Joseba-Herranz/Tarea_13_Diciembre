@@ -12,7 +12,8 @@ public class BaseDeDatos {
     public List<Curso> getCursos() {
         return cursos;
     }
-
+    
+    @XmlElement(name = "Curso")
     public void setCursos(List<Curso> cursos) {
         this.cursos = cursos;
     }

@@ -6,9 +6,9 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,10 +16,6 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
-import com.thoughtworks.xstream.mapper.MapperWrapper;
 
 
 public class HibernateHandler {
@@ -73,10 +69,8 @@ public class HibernateHandler {
                             alumno.setNombre(nombre);
                             alumno.setApellido(apellido);
 
-                            // Set the curso for the alumno
                             alumno.setCurso(currentCurso);
 
-                            // Add the alumno to the curso
                             currentCurso.addAlumno(alumno);
                             session.save(alumno);
 
@@ -188,15 +182,12 @@ public class HibernateHandler {
 
                 BaseDeDatos baseDeDatos = new BaseDeDatos();
                 baseDeDatos.setCursos(cursos);
-
-                // Crear el contexto JAXB y el marshaller
+           
                 JAXBContext context = JAXBContext.newInstance(BaseDeDatos.class);
                 Marshaller marshaller = context.createMarshaller();
 
-                // Configurar el marshaller para la salida formatada
                 marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-                // Escribir el objeto a un archivo XML
                 marshaller.marshal(baseDeDatos, new File("pruebas.xml"));
 
                 transaction.commit();

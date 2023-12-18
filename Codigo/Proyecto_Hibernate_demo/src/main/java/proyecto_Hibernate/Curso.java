@@ -4,30 +4,24 @@ package proyecto_Hibernate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import jakarta.xml.bind.annotation.XmlElement;
+
+import jakarta.xml.bind.annotation.XmlRootElement;
+
 
 import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.io.xml.DomDriver;
 
 @Entity
 @Table(name = "Curso", schema = "examen")
 @XmlRootElement(name = "BaseDeDatos")
-//@XStreamAlias("Curso")
 public class Curso {
     
     public Curso() {
@@ -39,9 +33,9 @@ public class Curso {
     private int id;
     private String nombre;
     
-    @XmlTransient
+    
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
-    private List<Alumno> alumnos;
+    private List<Alumno> alumnos = new ArrayList<>();
 
     @XmlElement
     public int getId() {
