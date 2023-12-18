@@ -1,242 +1,170 @@
 <BaseDeDatos>
-  <Curso>
-    <id>1</id>
-    <nombre>Programación Avanzada</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">1</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>2</id>
-    <nombre>Bases de Datos</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">2</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>3</id>
-    <nombre>Inteligencia Artificial</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">3</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>4</id>
-    <nombre>Desarrollo Web</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">4</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>5</id>
-    <nombre>Redes de Computadoras</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">5</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>6</id>
-    <nombre>Seguridad Informática</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">6</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>7</id>
-    <nombre>Machine Learning</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">7</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>8</id>
-    <nombre>Sistemas Operativos</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">8</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>9</id>
-    <nombre>Programación Avanzada</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">9</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>10</id>
-    <nombre>Bases de Datos</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">10</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>11</id>
-    <nombre>Inteligencia Artificial</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">11</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>12</id>
-    <nombre>Desarrollo Web</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">12</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>13</id>
-    <nombre>Redes de Computadoras</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">13</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>14</id>
-    <nombre>Seguridad Informática</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">14</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>15</id>
-    <nombre>Machine Learning</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">15</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
-  <Curso>
-    <id>16</id>
-    <nombre>Sistemas Operativos</nombre>
-    <alumnos class="org.hibernate.collection.internal.PersistentBag">
-      <isTempSession>false</isTempSession>
-      <initialized>false</initialized>
-      <owner class="Curso" reference="../.."/>
-      <cachedSize>-1</cachedSize>
-      <role>proyecto_Hibernate.Curso.alumnos</role>
-      <key class="int">16</key>
-      <dirty>false</dirty>
-      <elementRemoved>false</elementRemoved>
-      <allowLoadOutsideTransaction>false</allowLoadOutsideTransaction>
-    </alumnos>
-  </Curso>
+	<Cursos>
+		<Curso>
+			<id>1</id>
+			<nombre>Programación Avanzada</nombre>
+			<descripcion>Curso de programación avanzada</descripcion>
+			<Alumnos>
+				<Alumno>
+					<id>1</id>
+					<nombre>Aitor</nombre>
+					<apellido>Etxeberria</apellido>
+				</Alumno>
+				<Alumno>
+					<id>2</id>
+					<nombre>Maite</nombre>
+					<apellido>Irizar</apellido>
+				</Alumno>
+				<Alumno>
+					<id>3</id>
+					<nombre>Gorka</nombre>
+					<apellido>Arana</apellido>
+				</Alumno>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>2</id>
+			<nombre>Bases de Datos</nombre>
+			<descripcion>Curso de bases de datos</descripcion>
+			<Alumnos>
+				<Alumno>
+					<id>4</id>
+					<nombre>Nerea</nombre>
+					<apellido>Urrutia</apellido>
+				</Alumno>
+				<Alumno>
+					<id>5</id>
+					<nombre>Jon</nombre>
+					<apellido>Zubizarreta</apellido>
+				</Alumno>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>3</id>
+			<nombre>Inteligencia Artificial</nombre>
+			<descripcion>Curso de inteligencia artificial</descripcion>
+			<Alumnos>
+				<Alumno>
+					<id>6</id>
+					<nombre>Miren</nombre>
+					<apellido>Otxoa</apellido>
+				</Alumno>
+				<Alumno>
+					<id>7</id>
+					<nombre>Unai</nombre>
+					<apellido>Aguirre</apellido>
+				</Alumno>
+				<Alumno>
+					<id>8</id>
+					<nombre>Leire</nombre>
+					<apellido>Echeverría</apellido>
+				</Alumno>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>4</id>
+			<nombre>Desarrollo Web</nombre>
+			<descripcion>Curso de desarrollo web</descripcion>
+			<Alumnos>
+				<Alumno>
+					<id>9</id>
+					<nombre>Asier</nombre>
+					<apellido>Gómez</apellido>
+				</Alumno>
+				<Alumno>
+					<id>10</id>
+					<nombre>Izaro</nombre>
+					<apellido>Martín</apellido>
+				</Alumno>
+				<Alumno>
+					<id>11</id>
+					<nombre>Iker</nombre>
+					<apellido>Ruiz</apellido>
+				</Alumno>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>5</id>
+			<nombre>Redes de Computadoras</nombre>
+			<descripcion>Curso de redes de computadoras</descripcion>
+			<Alumnos>
+				<Alumno>
+					<id>12</id>
+					<nombre>Sara</nombre>
+					<apellido>Rodríguez</apellido>
+				</Alumno>
+				<Alumno>
+					<id>13</id>
+					<nombre>Mikel</nombre>
+					<apellido>Torres</apellido>
+				</Alumno>
+				<Alumno>
+					<id>14</id>
+					<nombre>Eider</nombre>
+					<apellido>Vázquez</apellido>
+				</Alumno>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>6</id>
+			<nombre>Seguridad Informática</nombre>
+			<descripcion>Curso de seguridad informática</descripcion>
+			<Alumnos>
+				<Alumno>
+					<id>15</id>
+					<nombre>Adriana</nombre>
+					<apellido>Zubeldia</apellido>
+				</Alumno>
+				<Alumno>
+					<id>16</id>
+					<nombre>Andoni</nombre>
+					<apellido>Soto</apellido>
+				</Alumno>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>7</id>
+			<nombre>Machine Learning</nombre>
+			<descripcion>Curso de machine learning</descripcion>
+			<Alumnos>
+				<Alumno>
+					<id>17</id>
+					<nombre>Leire</nombre>
+					<apellido>Ruiz</apellido>
+				</Alumno>
+				<Alumno>
+					<id>18</id>
+					<nombre>Gorka</nombre>
+					<apellido>Herrera</apellido>
+				</Alumno>
+				<Alumno>
+					<id>19</id>
+					<nombre>Sara</nombre>
+					<apellido>Mendoza</apellido>
+				</Alumno>
+			</Alumnos>
+		</Curso>
+		<Curso>
+			<id>8</id>
+			<nombre>Sistemas Operativos</nombre>
+			<descripcion>Curso de sistemas operativos</descripcion>
+			<Alumnos>
+				<Alumno>
+					<id>20</id>
+					<nombre>Iker</nombre>
+					<apellido>Flores</apellido>
+				</Alumno>
+				<Alumno>
+					<id>21</id>
+					<nombre>Ane</nombre>
+					<apellido>Cordero</apellido>
+				</Alumno>
+				<Alumno>
+					<id>22</id>
+					<nombre>Eneko</nombre>
+					<apellido>Ortiz</apellido>
+				</Alumno>
+			</Alumnos>
+		</Curso>
+	</Cursos>
 </BaseDeDatos>

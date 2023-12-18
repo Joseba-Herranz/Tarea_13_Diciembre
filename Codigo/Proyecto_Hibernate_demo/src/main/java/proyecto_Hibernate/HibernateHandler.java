@@ -44,14 +44,13 @@ public class HibernateHandler {
                     String linea = scanner.nextLine().trim();
 
                     if (linea.isEmpty()) {
-                        continue;  // Skip empty lines
+                        continue;  
                     }
 
                     System.out.println("Leyendo línea: " + linea);
 
                     if (linea.startsWith("Curso")) {
                         if (currentCurso != null) {
-                            // Save the curso and associated alumnos
                             session.save(currentCurso);
                             System.out.println("Guardando curso: " + currentCurso);
                         }
@@ -179,75 +178,38 @@ public class HibernateHandler {
             }
         }
     }
-    
+   
     public void volcarBaseDeDatos() {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
 
-            List<Curso> cursos = session.createQuery("FROM Curso", Curso.class).getResultList();
-
-            XStream xstream = new XStream(new DomDriver()) {
-                @Override
-                protected MapperWrapper wrapMapper(MapperWrapper next) {
-                    return new MapperWrapper(next) {
-                        @Override
-                        public boolean shouldSerializeMember(Class definedIn, String fieldName) {
-                            if (definedIn == Object.class) {
-                                return false;
-                            }
-                            return super.shouldSerializeMember(definedIn, fieldName);
-                        }
-                    };
-                }
-            };
-            xstream.alias("BaseDeDatos", List.class);
-            xstream.alias("Curso", Curso.class);
-            xstream.alias("Alumno", Alumno.class);
-            String xml = xstream.toXML(cursos);
-
-            // Escribir el XML en un archivo
-            try (PrintWriter writer = new PrintWriter(new File("pruebas.xml"))) {
-                writer.print(xml);
-            }
-
-            transaction.commit();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            //transaction.rollback();
-        }
-    }
-    
-    
-    /*
-    public void volcarBaseDeDatos() {
-        try (Session session = sessionFactory.openSession()) {
-            Transaction transaction = session.beginTransaction();
-
-            try (PrintWriter writer = new PrintWriter(new File("pruebas.xml"))) {
+            try {
                 List<Curso> cursos = session.createQuery("FROM Curso", Curso.class).getResultList();
 
-                // Create a wrapper class to hold the list of Curso objects
-                CursosWrapper cursosWrapper = new CursosWrapper();
-                cursosWrapper.setCursos(cursos);
+                BaseDeDatos baseDeDatos = new BaseDeDatos();
+                baseDeDatos.setCursos(cursos);
 
-                JAXBContext context = JAXBContext.newInstance(CursosWrapper.class);
+                // Crear el contexto JAXB y el marshaller
+                JAXBContext context = JAXBContext.newInstance(BaseDeDatos.class);
                 Marshaller marshaller = context.createMarshaller();
+
+                // Configurar el marshaller para la salida formatada
                 marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-                // Marshal the CursosWrapper object into XML and write it to the file
-                marshaller.marshal(cursosWrapper, writer);
+                // Escribir el objeto a un archivo XML
+                marshaller.marshal(baseDeDatos, new File("pruebas.xml"));
 
                 transaction.commit();
-            } catch (FileNotFoundException | JAXBException e) {
+            } catch (JAXBException e) {
                 e.printStackTrace();
                 transaction.rollback();
             }
         }
-    }*/
+    }
     
-   /* public void volcarBaseDeDatos() {
-    	
-    	 
+    /*
+    public void volcarBaseDeDatos() {
+
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
 

@@ -8,23 +8,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
 
-import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.io.xml.DomDriver;
 
 
 @Entity
 @Table(name = "Alumno", schema = "examen")
-//@XmlRootElement
-@XStreamAlias("Alumno")
+@XmlRootElement
+//@XStreamAlias("Alumno")
+@XmlAccessorType
+@XmlType(propOrder = {"id", "nombre", "apellido", "curso"})
 public class Alumno {
 
     @Id
@@ -32,11 +36,14 @@ public class Alumno {
     private int id;
     private String nombre;
     private String apellido;
-
-    @ManyToOne(cascade = CascadeType.MERGE)
+    
+    
+    @XmlIDREF
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "curso_id")
     private Curso curso;
 
-    //@XmlElement
+    @XmlElement
     public int getId() {
         return id;
     }
@@ -45,7 +52,7 @@ public class Alumno {
         this.id = id;
     }
 
-    //@XmlElement
+    @XmlElement
     public String getNombre() {
         return nombre;
     }
@@ -54,7 +61,7 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    //@XmlElement
+    @XmlElement
     public String getApellido() {
         return apellido;
     }
@@ -63,7 +70,8 @@ public class Alumno {
         this.apellido = apellido;
     }
 
-    //@XmlTransient
+    @XmlInverseReference(mappedBy = "alumnos")
+    @XmlElement(name = "Curso")  
     public Curso getCurso() {
         return curso;
     }
@@ -72,10 +80,17 @@ public class Alumno {
         this.curso = curso;
     }
     
+    @XmlTransient
     //@XmlElement(name = "Alumnos")
+    public List<Alumno> getAlumnos() {
+        // Exclude the reference to the Curso object to avoid the cycle
+        return new ArrayList<>();
+    }
+    
+    /* @XmlElement(name = "Alumnos")
     public List<Alumno> getAlumnos() {
         List<Alumno> alumnos = new ArrayList<>();
         alumnos.add(this);
         return alumnos;
-    }
+    }*/
 }

@@ -1,16 +1,14 @@
 package proyecto_Hibernate;
 
-import java.util.List;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
-@XmlRootElement(name = "CursosWrapper")
-public class CursosWrapper {
-
+@XmlRootElement
+public class BaseDeDatos {
     private List<Curso> cursos;
 
-    @XmlElement(name = "Curso")
+    @XmlElement(name = "Cursos")
     public List<Curso> getCursos() {
         return cursos;
     }

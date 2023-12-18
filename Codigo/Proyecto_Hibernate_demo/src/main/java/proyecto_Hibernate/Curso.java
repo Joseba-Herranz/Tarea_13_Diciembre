@@ -13,9 +13,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
+
+import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -23,8 +26,8 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 @Entity
 @Table(name = "Curso", schema = "examen")
-//@XmlRootElement(name = "BaseDeDatos")
-@XStreamAlias("Curso")
+@XmlRootElement(name = "BaseDeDatos")
+//@XStreamAlias("Curso")
 public class Curso {
     
     public Curso() {
@@ -36,11 +39,11 @@ public class Curso {
     private int id;
     private String nombre;
     
-    
+    @XmlTransient
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
-    private List<Alumno> alumnos = new ArrayList<>();
+    private List<Alumno> alumnos;
 
-    //@XmlElement
+    @XmlElement
     public int getId() {
         return id;
     }
@@ -49,7 +52,7 @@ public class Curso {
         this.id = id;
     }
 
-    //@XmlElement
+    @XmlElement
     public String getNombre() {
         return nombre;
     }
@@ -58,7 +61,7 @@ public class Curso {
         this.nombre = nombre;
     }
 
-    //@XmlElement(name = "Alumnos")
+    @XmlInverseReference(mappedBy = "curso")
     public List<Alumno> getAlumnos() {
         return alumnos;
     }
@@ -73,12 +76,12 @@ public class Curso {
             alumno.setCurso(this);
         }
     }
-    
-    
-   // @XmlElement(name = "Cursos")
+
+    /*
+    @XmlElement(name = "Cursos")
     public List<Curso> getCursos() {
         List<Curso> cursos = new ArrayList<>();
         cursos.add(this);
         return cursos;
-    }
+    }*/
 }
