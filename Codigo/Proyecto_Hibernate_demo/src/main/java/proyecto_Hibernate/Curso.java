@@ -1,43 +1,37 @@
 package proyecto_Hibernate;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-
 import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
-
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Curso", schema = "examen")
 @XmlRootElement(name = "BaseDeDatos")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Curso {
-    
-    public Curso() {
-        this.alumnos = new ArrayList<>();
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @XmlElement(name = "CursoNombre")
     private String nombre;
-    
-    
-    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "curso")
     private List<Alumno> alumnos = new ArrayList<>();
 
-    @XmlElement
+
     public int getId() {
         return id;
     }
@@ -46,7 +40,6 @@ public class Curso {
         this.id = id;
     }
 
-    @XmlElement
     public String getNombre() {
         return nombre;
     }
@@ -55,7 +48,6 @@ public class Curso {
         this.nombre = nombre;
     }
 
-    @XmlInverseReference(mappedBy = "curso")
     public List<Alumno> getAlumnos() {
         return alumnos;
     }
@@ -70,12 +62,4 @@ public class Curso {
             alumno.setCurso(this);
         }
     }
-
-    /*
-    @XmlElement(name = "Cursos")
-    public List<Curso> getCursos() {
-        List<Curso> cursos = new ArrayList<>();
-        cursos.add(this);
-        return cursos;
-    }*/
 }

@@ -6,6 +6,10 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Scanner;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
@@ -15,8 +19,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-
-
 
 public class HibernateHandler {
     private SessionFactory sessionFactory;
@@ -79,7 +81,6 @@ public class HibernateHandler {
                     }
                 }
 
-                // Save the last curso and associated alumnos
                 if (currentCurso != null) {
                     session.save(currentCurso);
                     System.out.println("Guardando último curso: " + currentCurso);
@@ -91,68 +92,6 @@ public class HibernateHandler {
             }
         }
     }
-
-    
-    
-    /*
-    //Arreglar que no se machaca los datos anteriores
-    public void cargarBaseDeDatos() {
-        try (Session session = sessionFactory.openSession()) {
-            Transaction transaction = session.beginTransaction();
-
-            try (Scanner scanner = new Scanner(new File("curos_alumnos.txt"))) {
-                Curso currentCurso = null;
-
-                while (scanner.hasNextLine()) {
-                    String linea = scanner.nextLine();
-                    System.out.println("Leyendo línea: " + linea);
-
-                    if (linea.startsWith("Curso")) {
-                        if (currentCurso != null) {
-                            session.save(currentCurso);
-                            System.out.println("Guardando curso: " + currentCurso);
-                            currentCurso = null;
-                        }
-
-                        String[] cursoParts = linea.split(":");
-                        String currentCursoNombre = cursoParts[1].trim();
-
-                        currentCurso = new Curso();
-                        currentCurso.setNombre(currentCursoNombre);
-                        System.out.println("Nuevo curso: " + currentCurso);
-
-                    } else if (linea.startsWith("Alumno")) {
-                        if (currentCurso != null) {
-                            String[] alumnoParts = linea.split(":");
-                            String nombreCompleto = alumnoParts[1].trim();
-
-                            String[] nombreApellido = nombreCompleto.split(" ", 2);
-                            String nombre = nombreApellido[0].trim();
-                            String apellido = nombreApellido.length > 1 ? nombreApellido[1].trim() : "";
-
-                            Alumno alumno = new Alumno();
-                            alumno.setNombre(nombre);
-                            alumno.setApellido(apellido);
-
-                            currentCurso.addAlumno(alumno); 
-                            session.save(alumno);
-                            
-                            System.out.println("Añadiendo alumno a curso: " + alumno + " " +alumno.getNombre() + " "+ alumno.getApellido());
-                        }
-                    }
-                }
-
-                if (currentCurso != null) {
-                    session.save(currentCurso);
-                    System.out.println("Guardando último curso: " + currentCurso);
-                }
-
-                transaction.commit();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-    }*/
 
     
     public void mostrarBaseDeDatos() {
@@ -172,7 +111,8 @@ public class HibernateHandler {
             }
         }
     }
-   
+  
+    
     public void volcarBaseDeDatos() {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();

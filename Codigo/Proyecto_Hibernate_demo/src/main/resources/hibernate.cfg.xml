@@ -6,7 +6,7 @@
         <property name="hibernate.connection.password">root</property>
 		
 		<property name="hibernate.hbm2ddl.auto">update</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <mapping class="proyecto_Hibernate.Curso"/>
         <mapping class="proyecto_Hibernate.Alumno"/>
