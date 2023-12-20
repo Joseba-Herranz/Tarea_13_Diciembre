@@ -2,166 +2,160 @@
 <BaseDeDatos>
     <Curso>
         <id>1</id>
-        <CursoNombre>Programación Avanzada</CursoNombre>
-        <alumnos>
-            <id>1</id>
-            <nombre>Aitor</nombre>
-            <apellido>Etxeberria</apellido>
-            <CursoId>1</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>2</id>
-            <nombre>Maite</nombre>
-            <apellido>Irizar</apellido>
-            <CursoId>1</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>3</id>
-            <nombre>Gorka</nombre>
-            <apellido>Arana</apellido>
-            <CursoId>1</CursoId>
-        </alumnos>
+        <Nombre>Programación Avanzada</Nombre>
+        <Alumnos>
+            <Alumno>
+                <id>1</id>
+                <nombre>Aitor</nombre>
+                <apellido>Etxeberria</apellido>
+            </Alumno>
+            <Alumno>
+                <id>2</id>
+                <nombre>Maite</nombre>
+                <apellido>Irizar</apellido>
+            </Alumno>
+            <Alumno>
+                <id>3</id>
+                <nombre>Gorka</nombre>
+                <apellido>Arana</apellido>
+            </Alumno>
+        </Alumnos>
     </Curso>
     <Curso>
         <id>2</id>
-        <CursoNombre>Bases de Datos</CursoNombre>
-        <alumnos>
-            <id>4</id>
-            <nombre>Nerea</nombre>
-            <apellido>Urrutia</apellido>
-            <CursoId>2</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>5</id>
-            <nombre>Jon</nombre>
-            <apellido>Zubizarreta</apellido>
-            <CursoId>2</CursoId>
-        </alumnos>
+        <Nombre>Bases de Datos</Nombre>
+        <Alumnos>
+            <Alumno>
+                <id>4</id>
+                <nombre>Nerea</nombre>
+                <apellido>Urrutia</apellido>
+            </Alumno>
+            <Alumno>
+                <id>5</id>
+                <nombre>Jon</nombre>
+                <apellido>Zubizarreta</apellido>
+            </Alumno>
+        </Alumnos>
     </Curso>
     <Curso>
         <id>3</id>
-        <CursoNombre>Inteligencia Artificial</CursoNombre>
-        <alumnos>
-            <id>6</id>
-            <nombre>Miren</nombre>
-            <apellido>Otxoa</apellido>
-            <CursoId>3</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>7</id>
-            <nombre>Unai</nombre>
-            <apellido>Aguirre</apellido>
-            <CursoId>3</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>8</id>
-            <nombre>Leire</nombre>
-            <apellido>Echeverría</apellido>
-            <CursoId>3</CursoId>
-        </alumnos>
+        <Nombre>Inteligencia Artificial</Nombre>
+        <Alumnos>
+            <Alumno>
+                <id>6</id>
+                <nombre>Miren</nombre>
+                <apellido>Otxoa</apellido>
+            </Alumno>
+            <Alumno>
+                <id>7</id>
+                <nombre>Unai</nombre>
+                <apellido>Aguirre</apellido>
+            </Alumno>
+            <Alumno>
+                <id>8</id>
+                <nombre>Leire</nombre>
+                <apellido>Echeverría</apellido>
+            </Alumno>
+        </Alumnos>
     </Curso>
     <Curso>
         <id>4</id>
-        <CursoNombre>Desarrollo Web</CursoNombre>
-        <alumnos>
-            <id>9</id>
-            <nombre>Asier</nombre>
-            <apellido>Gómez</apellido>
-            <CursoId>4</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>10</id>
-            <nombre>Izaro</nombre>
-            <apellido>Martín</apellido>
-            <CursoId>4</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>11</id>
-            <nombre>Iker</nombre>
-            <apellido>Ruiz</apellido>
-            <CursoId>4</CursoId>
-        </alumnos>
+        <Nombre>Desarrollo Web</Nombre>
+        <Alumnos>
+            <Alumno>
+                <id>9</id>
+                <nombre>Asier</nombre>
+                <apellido>Gómez</apellido>
+            </Alumno>
+            <Alumno>
+                <id>10</id>
+                <nombre>Izaro</nombre>
+                <apellido>Martín</apellido>
+            </Alumno>
+            <Alumno>
+                <id>11</id>
+                <nombre>Iker</nombre>
+                <apellido>Ruiz</apellido>
+            </Alumno>
+        </Alumnos>
     </Curso>
     <Curso>
         <id>5</id>
-        <CursoNombre>Redes de Computadoras</CursoNombre>
-        <alumnos>
-            <id>12</id>
-            <nombre>Sara</nombre>
-            <apellido>Rodríguez</apellido>
-            <CursoId>5</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>13</id>
-            <nombre>Mikel</nombre>
-            <apellido>Torres</apellido>
-            <CursoId>5</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>14</id>
-            <nombre>Eider</nombre>
-            <apellido>Vázquez</apellido>
-            <CursoId>5</CursoId>
-        </alumnos>
+        <Nombre>Redes de Computadoras</Nombre>
+        <Alumnos>
+            <Alumno>
+                <id>12</id>
+                <nombre>Sara</nombre>
+                <apellido>Rodríguez</apellido>
+            </Alumno>
+            <Alumno>
+                <id>13</id>
+                <nombre>Mikel</nombre>
+                <apellido>Torres</apellido>
+            </Alumno>
+            <Alumno>
+                <id>14</id>
+                <nombre>Eider</nombre>
+                <apellido>Vázquez</apellido>
+            </Alumno>
+        </Alumnos>
     </Curso>
     <Curso>
         <id>6</id>
-        <CursoNombre>Seguridad Informática</CursoNombre>
-        <alumnos>
-            <id>15</id>
-            <nombre>Adriana</nombre>
-            <apellido>Zubeldia</apellido>
-            <CursoId>6</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>16</id>
-            <nombre>Andoni</nombre>
-            <apellido>Soto</apellido>
-            <CursoId>6</CursoId>
-        </alumnos>
+        <Nombre>Seguridad Informática</Nombre>
+        <Alumnos>
+            <Alumno>
+                <id>15</id>
+                <nombre>Adriana</nombre>
+                <apellido>Zubeldia</apellido>
+            </Alumno>
+            <Alumno>
+                <id>16</id>
+                <nombre>Andoni</nombre>
+                <apellido>Soto</apellido>
+            </Alumno>
+        </Alumnos>
     </Curso>
     <Curso>
         <id>7</id>
-        <CursoNombre>Machine Learning</CursoNombre>
-        <alumnos>
-            <id>17</id>
-            <nombre>Leire</nombre>
-            <apellido>Ruiz</apellido>
-            <CursoId>7</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>18</id>
-            <nombre>Gorka</nombre>
-            <apellido>Herrera</apellido>
-            <CursoId>7</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>19</id>
-            <nombre>Sara</nombre>
-            <apellido>Mendoza</apellido>
-            <CursoId>7</CursoId>
-        </alumnos>
+        <Nombre>Machine Learning</Nombre>
+        <Alumnos>
+            <Alumno>
+                <id>17</id>
+                <nombre>Leire</nombre>
+                <apellido>Ruiz</apellido>
+            </Alumno>
+            <Alumno>
+                <id>18</id>
+                <nombre>Gorka</nombre>
+                <apellido>Herrera</apellido>
+            </Alumno>
+            <Alumno>
+                <id>19</id>
+                <nombre>Sara</nombre>
+                <apellido>Mendoza</apellido>
+            </Alumno>
+        </Alumnos>
     </Curso>
     <Curso>
         <id>8</id>
-        <CursoNombre>Sistemas Operativos</CursoNombre>
-        <alumnos>
-            <id>20</id>
-            <nombre>Iker</nombre>
-            <apellido>Flores</apellido>
-            <CursoId>8</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>21</id>
-            <nombre>Ane</nombre>
-            <apellido>Cordero</apellido>
-            <CursoId>8</CursoId>
-        </alumnos>
-        <alumnos>
-            <id>22</id>
-            <nombre>Eneko</nombre>
-            <apellido>Ortiz</apellido>
-            <CursoId>8</CursoId>
-        </alumnos>
+        <Nombre>Sistemas Operativos</Nombre>
+        <Alumnos>
+            <Alumno>
+                <id>20</id>
+                <nombre>Iker</nombre>
+                <apellido>Flores</apellido>
+            </Alumno>
+            <Alumno>
+                <id>21</id>
+                <nombre>Ane</nombre>
+                <apellido>Cordero</apellido>
+            </Alumno>
+            <Alumno>
+                <id>22</id>
+                <nombre>Eneko</nombre>
+                <apellido>Ortiz</apellido>
+            </Alumno>
+        </Alumnos>
     </Curso>
 </BaseDeDatos>

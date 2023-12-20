@@ -135,6 +135,7 @@ public class HibernateHandler {
                 e.printStackTrace();
                 transaction.rollback();
             }
+            System.out.println("Archivo pruebas.xml creado");
         }
     }
     

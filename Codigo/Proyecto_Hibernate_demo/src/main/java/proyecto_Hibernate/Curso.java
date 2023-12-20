@@ -10,6 +10,7 @@ import jakarta.persistence.Table;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementWrapper;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.util.ArrayList;
@@ -25,11 +26,12 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @XmlElement(name = "CursoNombre")
+    @XmlElement(name = "Nombre")
     private String nombre;
 
     @OneToMany(mappedBy = "curso")
-    private List<Alumno> alumnos = new ArrayList<>();
+    @XmlElementWrapper(name="Alumnos")
+    private List<Alumno> Alumno = new ArrayList<>();
 
 
     public int getId() {
@@ -49,16 +51,16 @@ public class Curso {
     }
 
     public List<Alumno> getAlumnos() {
-        return alumnos;
+        return Alumno;
     }
 
     public void setAlumnos(List<Alumno> alumnos) {
-        this.alumnos = alumnos;
+        this.Alumno = alumnos;
     }
 
     public void addAlumno(Alumno alumno) {
         if (alumno != null) {
-            this.alumnos.add(alumno);
+            this.Alumno.add(alumno);
             alumno.setCurso(this);
         }
     }

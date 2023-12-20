@@ -78,7 +78,7 @@ public class Alumno {
 		this.curso = curso;
 	}
 
-	@XmlElement(name = "CursoId")
+	//@XmlElement(name = "CursoId")
     public int getCursoId() {
         return curso.getId();
     }
